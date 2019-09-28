@@ -1,0 +1,11 @@
+{
+  "name": "keycloak-tutorials",
+  "version": "1.0.0",
+  "description": "how to securise a Node API with Keycloak",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Christophe PARMENTIER",
+  "license": "ISC"
+}
