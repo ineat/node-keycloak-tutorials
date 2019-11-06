@@ -1,0 +1,185 @@
+{
+	"info": {
+		"_postman_id": "758188f1-64e9-4df0-80c9-9499da4919a0",
+		"name": "NodeJs Keycloak Tutorials",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "KEYCLOAK  request TOKEN for USER",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "user_ineat",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "api-nodejs",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/realms/API-KEYCLOAK/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"realms",
+						"API-KEYCLOAK",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				},
+				"description": "Dont forget to change client-secret with yours"
+			},
+			"response": []
+		},
+		{
+			"name": "KEYCLOAK  request TOKEN for ADMIN",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "admin_ineat",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "api-nodejs",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/realms/API-KEYCLOAK/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"realms",
+						"API-KEYCLOAK",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				},
+				"description": "Dont forget to change client-secret with yours"
+			},
+			"response": []
+		},
+		{
+			"name": "Request /api/user path",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICIxb1FqVFJScWVmWFZzaFJvQURLWkNRRTBaZ2ZWQzVnUk10NENxNEdBSVA0In0.eyJqdGkiOiIzOTBmZWU2Ni1lMTJkLTQ0YjAtYmZhZC00OGViMTAyMDNkY2YiLCJleHAiOjE1NzE2NjQ0NTMsIm5iZiI6MCwiaWF0IjoxNTcxNjY0MTUzLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXV0aC9yZWFsbXMvQVBJLUtFWUNMT0FLIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6IjEwMzY4MTRjLWQ2YTQtNDhhOC1hYWMyLWMwNDBhZWI1MzM4MSIsInR5cCI6IkJlYXJlciIsImF6cCI6ImFwaS1ub2RlanMiLCJhdXRoX3RpbWUiOjAsInNlc3Npb25fc3RhdGUiOiI2OWEyOTI1OS1jMTU4LTQ3NzctYWUwZC0yMzkxOGY4YjY4NDUiLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJVU0VSIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYXBpLW5vZGVqcyI6eyJyb2xlcyI6WyJVU0VSIl19LCJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwicHJlZmVycmVkX3VzZXJuYW1lIjoidXNlciIsImVtYWlsIjoidXNlckBpbmVhdC1jb25zZWlsLmZyIn0.Cq3U4nPGGF_kT3agzgMenJN9DZ33sLA6cUMt0tKiWze24w--clCN1jCG0Rm9yKkrWQhcEPpojHpIFdOD72NFk6X3-5mK50Z6t5IerpWYV2xKtujDJar3hGnXA5pSHofslUkLFBFqVhNO-Q3lo2TeiDE3dXe360VXstmBw9WItYWWGP34H2SfLyqropl_-RDHIPzTklQzMrBuiBmSrSg6AjToihkFbVAt_2sXukCB3us54JVlcDOr1_WFVqygCvvCZ1197jX2Wt6pOSlreuqy4A2yVZK4fc8K_IAHg6Jn93ZHigyW0ywXo8DEgfS_EUaJW3EjmdWeSu3y0BzZMxPw3Q"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user"
+					]
+				},
+				"description": "Dont forget to set Bearer value obtains from token request"
+			},
+			"response": []
+		},
+		{
+			"name": "Request /api/admin path",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICIxb1FqVFJScWVmWFZzaFJvQURLWkNRRTBaZ2ZWQzVnUk10NENxNEdBSVA0In0.eyJqdGkiOiJiMmEyNDExMC0zZTM2LTQ2MjItYTM4OC0zMTViYTdlM2EzYTciLCJleHAiOjE1NzE2NjU1NzcsIm5iZiI6MCwiaWF0IjoxNTcxNjY1Mjc3LCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXV0aC9yZWFsbXMvQVBJLUtFWUNMT0FLIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6IjhkYTZlNTkzLTg1MjctNDdhMi1hODBlLWVmMTEyYTA2YjJlNCIsInR5cCI6IkJlYXJlciIsImF6cCI6ImFwaS1ub2RlanMiLCJhdXRoX3RpbWUiOjAsInNlc3Npb25fc3RhdGUiOiIzMzlhMTEyYi05NDZjLTRhNmMtODRmMi02MjM0NzQxNDEzNmYiLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJBRE1JTiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFwaS1ub2RlanMiOnsicm9sZXMiOlsiQURNSU4iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJhZG1pbl9pbmVhdCIsImVtYWlsIjoiYWRtaW5AaW5lYXQuZnIifQ.qDZcoflekj7L9_LvMYwuPkWwpomlLBKb2DuJKxRih2VDkfeeyNeCdBemtjhe5oyQoCkbSrwK_m7pIqcn0rsZfFfLY8SZdQ_dh4EJjWx0PqFht2IVa_-W_Rt-3vTYHoNGNCqGzNx1fkDfqWE9aQwwObwlphIsekLxZiFc8OczaarZEa2YSO-Hr6_1bokVoiB0TIBS9q-5CUuWrVKaBJJfgBu5pQEFT0FJIGDCvaVo9GxHJjNWF4PwAJIx9Z7IPF6gBqJREe55PR4UUy9J5VlWkqwVQ8Ovgo4vGW9mSKf4_iRtZyf-02MjKGppp8Js8kxALxNRmCq4BxbSDpxiQBYLRg"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/admin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"admin"
+					]
+				},
+				"description": "Dont forget to set Bearer value obtains from token request"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
